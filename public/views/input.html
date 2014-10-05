@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S3 Cloud Convert</title>
+  
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/bootstrap-progress.css" />
+  <link rel="stylesheet" href="css/app.css" />
+
+  <script src="js/vendor/modernizr.js"></script>
+</head>
+<body ng-app="mediaInputApp" ng-controller="MediaInputController">
+
+<div class="row">
+  <div class="large-12 columns">
+
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">S3 Cloud Convert</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span></span></a>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li>
+            <a href="/output">Video Outputs</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">     
+      <p>Convert media using CloudConvert and S3</p>
+
+      <!-- <form id="formUpload"> -->
+      <div class="row">
+        <div class="medium-6 columns">
+          <label>Output Format</label>          
+          <select ng-model="selectedFormat" ng-options="item as item.name for item in outputFormats"></select>
+        </div>
+
+        <div class="medium-6 columns">
+          <label>Video Resolution</label>
+          <select ng-model="selectedResolution" ng-options="item as item.name for item in videoResolutions"></select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <label>Upload Media File</label>
+        </div>
+        <div class="medium-6 columns"></div>
+      </div>
+      
+      <div class="row">
+        <div class="medium-6 columns">
+          <label class="button radius">
+            <input type="file" id="videoFile" class="hide" file-model="inputFile"/>
+            Select File
+            <!-- split class <span data-dropdown="drop"></span> -->
+          </label>
+          <!--<br> <ul id="drop" class="f-dropdown" data-dropdown-content>
+            <li><a href="#" data-reveal-id="s3Modal">Use Amazon S3</a></li>
+          </ul> -->
+        </div>
+        
+        <div class="medium-6 columns">          
+          <p data-alert class="alert-box radius secondary" ng-show="inputFile">
+            <strong>File Name: {{inputFile.name}}</strong>
+            <!-- <a href="#" class="close">&times;</a> -->
+          </p>
+        </div>
+
+        <!-- <input type="hidden" id="public_url" name="public_url" value="" /> -->
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="columns">
+          <!-- <input type="submit" value="Convert" class="button success radius" /> -->          
+          <a href="" ng-click="convertClick()" class="button success radius" />Start Convert</a>
+          <!-- <button id="uploadS3" class="button warning radius right" />Test Upload To S3</button> -->
+        </div>    
+      </div>
+      <!-- </form> -->
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+
+    <div class="panel">
+      <p>File Upload Progress</p>
+      <div class="row">
+        <div class="columns">
+          <label id="progressLabel" style="text-transform:uppercase;">{{progressStatus}}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="columns">
+          <div class="progress-bootstrap">
+            <div class="progress-bar progress-bar-{{progressClass}} progress-bar-striped active" ng-style="{width: (progress + '%')}" 
+            role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100">
+              <span ng-show="progress>0" class="">{{progress | number: 0}} %</span>
+            </div>
+          </div>
+          <a href="" ng-click="testProgressBar()" class="button secondary radius small right" />Test Progress Bar</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>  
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+
+<script src="js/foundation.min.js"></script>
+<script src="js/controllers/input-controller.js"></script>
+
+<!-- <script src="js/cloud.convert.js"></script>
+<script src="js/s3upload.js"></script> -->
+
+<script>  
+  $(document).foundation();
+</script>
+
+</body>
+</html>

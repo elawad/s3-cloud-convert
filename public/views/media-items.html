@@ -1,0 +1,32 @@
+
+<ul class="small-block-grid-1 medium-block-grid-{{mCol||2}} large-block-grid-{{lCol||3}}">
+  
+  <li class="media-panel" ng-repeat="item in filteredItems | orderBy: '-LastModified'">     
+      <div ng-switch on="item.Type">          
+          
+        <div ng-switch-when="video">          
+        <div class="th">
+          <video controls preload="metadata">
+            <source ng-src="{{trustUrl(item.Url)}}" type="video/{{item.Extension}}">
+          </video>
+        </div>
+
+        <media-info></media-info>
+        </div>
+
+        <div ng-switch-when="image">                
+        <div class="th">
+          <img ng-src="{{item.Url}}">           
+          
+          <!-- WIT provides image optimization -->
+          <!-- <img ng-src="//wit.wurfl.io/{{item.Url}}">  -->            
+        </div>
+
+        <media-info></media-info>
+        </div>
+
+      </div>
+      <hr class='show-for-small-only'>
+  </li>
+
+</ul>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S3 Cloud Convert</title>
+
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/loading-bar.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  
+  <script src="js/vendor/modernizr.js"></script>
+</head>
+
+<body ng-app="mediaOutputApp">
+
+<div class="row">
+  <div class="large-12 columns">
+    
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">S3 Cloud Convert</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span></span></a>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li>
+            <a href="/">Form Input</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+          
+    <div class="panel">
+      <p>List of Converted Media</p>
+
+      <div class="row">
+        <div class="large-6 medium-6 small-8 columns">
+          <input type="text" placeholder="filter results" ng-model="searchFilter"/>
+        </div>
+      </div>
+
+      <media-items></media-items>
+    </div>
+  </div>
+</div>
+  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-animate.min.js"></script>
+
+<script src="js/foundation.min.js"></script>
+<script src="js/loading-bar.js"></script>
+<script src="js/controllers/output-controller.js"></script>
+
+<script>
+  $(document).foundation();
+</script>
+
+</body>
+</html>

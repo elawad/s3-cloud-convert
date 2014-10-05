@@ -1,0 +1,97 @@
+/* Foundation override */
+/*@media (min-width: 641px) {*/
+body {
+  padding-top: 0.9375rem;
+}
+/*}*/
+
+.progress.warning .meter {
+  background: #f08a24;
+  height: 100%;
+  display: block;
+}
+
+button.warning, .button.warning {
+  background-color: #f08a24;
+  border-color: #c9731e;
+  color: white;
+}
+button.warning:hover,
+button.warning:focus, .button.warning:hover, .button.warning:focus {
+  background-color: #c9731e;
+}
+button.warning:hover,
+button.warning:focus, .button.warning:hover, .button.warning:focus {
+  color: white;
+}
+/* end Foundation */
+
+
+/* Bootstrap-Progress override */
+/* Renamed .progress to .progress-bootstrap to eliminate collision with foundation */
+.progress-bootstrap {
+  height: 1.8rem;
+}
+.progress-bootstrap span {
+  line-height: 1.8rem;
+}
+.progress-bootstrap .progress-bar {
+      border-radius: 2px ;
+}
+.progress-bar[aria-valuenow="1"],
+.progress-bar[aria-valuenow="2"],
+.progress-bar[aria-valuenow="3"], {
+  min-width: 0px;
+}
+/* end Bootstrap-Progress */
+
+
+/* File Input */
+label input[type="file"] {
+  position: fixed;
+  top: -1000px;
+}
+
+/* Video Output */
+video {
+  width: auto;
+  max-width: 100%;
+  height: auto; 
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Angular Animate */
+.media-panel.ng-enter, .media-panel.ng-move {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+.media-panel.ng-enter-active, .media-panel.ng-move-active {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+
+/*Angular Loading-Bar */
+/*#loading-bar .bar {
+  background: #2c3e50;
+}
+#loading-bar-spinner .spinner-icon {
+  border-top-color: #2c3e50;
+  border-left-color: #2c3e50;
+}
+#loading-bar .peg {
+  -moz-box-shadow: #2c3e50 1px 0 6px 1px;
+  -ms-box-shadow: #2c3e50 1px 0 6px 1px;
+  -webkit-box-shadow: #2c3e50 1px 0 6px 1px;
+  box-shadow: #2c3e50 1px 0 6px 1px;
+}*/
+/* end Angular Loading-Bar */

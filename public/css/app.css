@@ -40,7 +40,7 @@ button.warning:focus, .button.warning:hover, .button.warning:focus {
 }
 .progress-bar[aria-valuenow="1"],
 .progress-bar[aria-valuenow="2"],
-.progress-bar[aria-valuenow="3"], {
+.progress-bar[aria-valuenow="3"] {
   min-width: 0px;
 }
 /* end Bootstrap-Progress */

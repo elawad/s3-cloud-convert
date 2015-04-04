@@ -125,7 +125,7 @@
         var step = data.step;
 
         if (step == 'input') {  
-          $scope.progressStatus = 'Sending to Cloud Convert';
+          $scope.progressStatus = 'Sending to CloudConvert';
           incrementProgress();
         }
         else if (step == 'convert') {

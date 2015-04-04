@@ -27,6 +27,7 @@ app.use('css', express.static(__dirname + '/public/css'));
 //Start the server to handle incoming requests.
 app.listen(app.get('port'));
 
+console.log('Listening on', app.get('port'));
 
 // Render html pages
 app.get('/', function(req, res){
